@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+</head>
+<body>
+    <!-- <img src="./cat.png" alt="귀여운고양이사진" /> -->
+    
+    <form action="{% url 'home' %}" method="POST">
+        {% csrf_token %}
+    <input name="userid" placeholder="ID를 입력 하세요" type='text' />
+    <input name="userpw" placeholder="PW를 입력 하세요" type='password' />
+    <input type="submit" value="Log In"/>
+    </form>
+
+    <form action="{% url 'join' %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="JOIN"/>
+    </form>
+</body>
+</html>
